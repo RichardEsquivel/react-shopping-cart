@@ -8,7 +8,7 @@ import Products from './components/Products';
 import ShoppingCart from './components/ShoppingCart';
 
 //Contexts
-import ProductContext from './contexts/ProductContexts.js';
+import ProductContext from './contexts/ProductContext.js';
 
 function App() {
 	const [products] = useState(data);
@@ -29,18 +29,14 @@ function App() {
 					exact
 					path="/"
 					component={Products}
-
-
 				/>
-				)}
-			/>
-
-			<Route
+				<Route
 					path="/cart"
 					render={() => <ShoppingCart cart={cart} />}
 				/>
 			</div>
 		</ProductContext.Provider>
+
 	);
 }
 
